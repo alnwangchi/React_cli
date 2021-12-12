@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'; // 紀錄效能的東西
 
 ReactDOM.render(
+  // StrictMode 用來檢查 App 元件裡頭所有元件可能不對的東西
   <React.StrictMode>
     <App />
   </React.StrictMode>,
