@@ -1,13 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'; // 引入 react 核心
+import ReactDOM from 'react-dom'; // 引入 reactDOM 用於渲染
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'; // 紀錄效能的東西
 
+// go
+import Hello from './components/Hello/Hello'
+import Hello2 from './components/Hello2' // 元件名稱為 index 時可以不寫
+
+// 副檔名 .js .jsx 可省略
+
 ReactDOM.render(
   // StrictMode 用來檢查 App 元件裡頭所有元件可能不對的東西
   <React.StrictMode>
-    <App />
+    <Hello /> 
+    <Hello2 /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
