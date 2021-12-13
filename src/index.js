@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'; // 紀錄效能的東西
 // go
 import Hello from './components/Hello/Hello'
 import Hello2 from './components/Hello2' // 元件名稱為 index 時可以不寫
+import Hello3 from './components/Hello3'
 
 // 副檔名 .js .jsx 可省略
 
@@ -15,6 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Hello /> 
     <Hello2 /> 
+    <Hello3 /> 
   </React.StrictMode>,
   document.getElementById('root')
 );

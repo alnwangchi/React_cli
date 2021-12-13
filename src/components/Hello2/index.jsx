@@ -3,6 +3,6 @@ import './index.css';
 
 export default class Hello extends Component {
   render() {
-    return <h1 className="gray">Hi Hi Hello !!!</h1>
+    return <h1 className="title">Hi Hi Hello !!!</h1>
   }
 }
