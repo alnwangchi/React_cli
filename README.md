@@ -4,6 +4,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 筆記在此
 
+### 元件化流程
+
+1. 拆分元件，想好合理的畫面拆分方式
+2. 實現靜態的元件
+3. 實現動態的元件
+
+3-1 : 初始化資料內容
+3-2 : 定義好資料結構及型別
+3-3 : 保存於哪個元件中 ?
+3-4 : 頁面交互 (事件監聽)
+
+
+
 
 ## Available Scripts
 
