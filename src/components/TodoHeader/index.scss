@@ -1,0 +1,16 @@
+.todo_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5em;
+  .todo_input {
+    border-radius: .25rem;
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 0.25rem;
+    &:focus, &:active {
+      border-color: #222;
+      outline: none;
+    }
+  }
+}

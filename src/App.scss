@@ -1,0 +1,61 @@
+// base
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(315deg,#FFAC7C,#FFCEAF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// main
+.todo {
+  // width: 100%;
+  // max-width: 400px;
+  // width: 400px;
+  padding: 2em;
+  min-height: 120px;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+// todo header
+
+// todo list
+
+// common styles
+.btn {
+  border-radius: .25rem;
+  border: none;
+  padding: .25em .5em;
+  cursor: pointer;
+  transition: .25s;
+  color: #fff;
+  background-color: hsl(0, 0%, 80%);
+  &:hover {
+    background-color: hsl(0, 0%, 65%);
+  }
+  &:active {
+    background-color: hsl(0, 0%, 45%);
+  }
+}
+
+.btn_add {
+  background-color: hsl(199, 57%, 75%);
+  &:hover {
+    background-color: hsl(199, 57%, 65%);
+  }
+  &:active {
+    background-color: hsl(199, 57%, 55%);
+  }
+}
+.btn_del {
+  background-color: hsl(0, 57%, 75%);
+  &:hover {
+    background-color: hsl(0, 57%, 65%);
+  }
+  &:active {
+    background-color: hsl(0, 57%, 55%);
+  }
+}

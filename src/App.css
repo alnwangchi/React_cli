@@ -1,0 +1,66 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(315deg, #FFAC7C, #FFCEAF);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo {
+  padding: 2em;
+  min-height: 120px;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.btn {
+  border-radius: .25rem;
+  border: none;
+  padding: .25em .5em;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
+  color: #fff;
+  background-color: #cccccc;
+}
+
+.btn:hover {
+  background-color: #a6a6a6;
+}
+
+.btn:active {
+  background-color: #737373;
+}
+
+.btn_add {
+  background-color: #9bcde4;
+}
+
+.btn_add:hover {
+  background-color: #73b8d9;
+}
+
+.btn_add:active {
+  background-color: #4ba4ce;
+}
+
+.btn_del {
+  background-color: #e49b9b;
+}
+
+.btn_del:hover {
+  background-color: #d97373;
+}
+
+.btn_del:active {
+  background-color: #ce4b4b;
+}
