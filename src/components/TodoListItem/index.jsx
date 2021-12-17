@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './index.css';
 
 class TodoListItem extends Component {
-
+  // 對傳入的 props 做限制
   static propTypes = {
     updateTodo: PropTypes.func.isRequired,
     delTodo: PropTypes.func.isRequired
@@ -22,6 +22,7 @@ class TodoListItem extends Component {
     return () => {
       const {delTodo} = this.props
       // 多做一層確認詢問 但是不明白為何要用 window.
+      // 若要用全局的方法 必須要寫出 window 
       if(window.confirm('確定刪除此項目嗎?')){
         delTodo(id) // 只需要 id 判斷要刪除哪一筆
       }else {
@@ -36,7 +37,7 @@ class TodoListItem extends Component {
     return (
       <li className="todo_item">
         <div>
-          <input type="checkbox" name="" id={id} defaultChecked={done} onChange={this.changeDone(id)} />
+          <input type="checkbox" name="" id={id} checked={done} onChange={this.changeDone(id)} />
           <label htmlFor={id}>{name}</label>
         </div>
         <button className="btn btn_del" onClick={this.handleDelete(id)}>刪除</button>

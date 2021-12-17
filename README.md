@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ### 雜筆記
-input:checked 的屬性若直接給的話會報錯，顯示說這種方式沒有綁定事件(onChange)會變成 read-only，所以要將 checked 改寫為 defaultChecked
+input:checked 的屬性若直接給的話會報錯，因為這種方式沒有綁定事件(onChange)會變成 read-only，所以需要綁定事件，或是"暫時"將 checked 改寫為 defaultChecked
 
 子元件要傳遞給父元件時，父元件需透過 props 傳給子元件一個 func，讓子元件想往上傳遞時可以調用
 

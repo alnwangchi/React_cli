@@ -61,7 +61,23 @@ class App extends Component {
     this.setState({todos: newDotos})
   }
   
-  
+  // 用於一次性移除已完成事項，傳給子層用
+  removeHasDone = () => {
+    const {todos} = this.state
+    const hasDone = todos.filter((todoObj) => todoObj.done === false)
+    this.setState({todos: hasDone})
+  }
+
+  // 用於全部勾選 
+  ckeckedAll = (done) => {
+    const {todos} = this.state
+    // 有點疑問為何下面要{...todoObj}
+    // const allCheckedTodos = todos.map((todoObj) => todoObj.done = true)
+    const allCheckedTodos = todos.map((todoObj) => {
+      return {...todoObj, done: done}
+    })
+    this.setState({todos: allCheckedTodos})
+  }
 
 
   render() {
@@ -70,7 +86,7 @@ class App extends Component {
       <div className="todo">
         <TodoHeader addTodo={this.addTodo}/>
         <TodoList todos={todos} updateTodo={this.updateTodo} delTodo={this.delTodo}/>
-        <RecordBoard />
+        <RecordBoard todos={todos} removeHasDone={this.removeHasDone} ckeckedAll={this.ckeckedAll}/>
       </div>
     );
   }
