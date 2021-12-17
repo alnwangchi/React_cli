@@ -30,6 +30,13 @@ static propTypes = {
 }
 ```
 
+### 寫了個 TodoList 的筆記
+1. 當我只有某一個元件需要的數據時，就將數據放在該元件的 state 中
+2. 當我有多個元件都需要用到的數據時，就將數據放在共同父元件的 state 中
+3. 父元件傳遞給子元件數據時，直接透過 props 傳
+4. 子元件傳遞給付元件數據時，父元件需提前傳一個方法給子元件
+5. state 在哪裡，操作state 的方法就在哪裡
+
 ## Available Scripts
 
 In the project directory, you can run:
