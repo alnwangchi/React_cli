@@ -11,8 +11,8 @@ export default class ResultField extends Component {
   }
 
   componentDidMount() {
-    // console.log('請按讚訂閱加分享小鈴鐺');
-    this.token = Pubsub.subscribe("search",(_,stateObj) => {
+    console.log('請按讚訂閱加分享小鈴鐺');
+    this.token = Pubsub.subscribe("Hi",(_,stateObj) => {
       console.log('收到消息囉',stateObj);
       this.setState(stateObj)
     })

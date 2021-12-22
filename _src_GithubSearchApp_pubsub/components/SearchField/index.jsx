@@ -1,36 +1,29 @@
 import React, { Component } from 'react'
-// import axios from 'axios' // AJAX
+import axios from 'axios' // AJAX
 import Pubsub from 'pubsub-js' // 訂閱發布
 
 
 export default class SearchField extends Component {
 
-  searchUser = async () => {
+  searchUser = () => {
+    console.log('Search元件發布消息囉!');
+    // Pubsub.publish('Hi',{name: 'John', age: 33})
     const {keyWordElement:{value:keyWord}} = this
 
-    Pubsub.publish('search',{
+    Pubsub.publish('Hi',{
       isFirst: false,
       isLoading: true
     })  
 
     const url = `https://api.github.com/search/users?q=${keyWord}`
-    // axios.get(url)
-    //   .then(response => {
-    //     const usersData = response.data.items
-    //     Pubsub.publish('Hi', {isLoading: false, users: usersData})
-    //   })
-    //   .catch(error => {
-    //     Pubsub.publish('Hi', {isLoading: false, error: error})
-    //   })
-    try {
-      const response = await fetch(url)
-      const data = await response.json()
-      // console.log(data.items);
-      Pubsub.publish('search', {isLoading: false, users: data.items})
-    } catch (error) {
-      console.log(error);
-    }
-
+    axios.get(url)
+      .then(response => {
+        const usersData = response.data.items
+        Pubsub.publish('Hi', {isLoading: false, users: usersData})
+      })
+      .catch(error => {
+        Pubsub.publish('Hi', {isLoading: false, error: error})
+      })
   }
   
   render() { 
