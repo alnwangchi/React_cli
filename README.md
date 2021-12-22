@@ -37,6 +37,11 @@ static propTypes = {
 4. 子元件傳遞給付元件數據時，父元件需提前傳一個方法給子元件
 5. state 在哪裡，操作state 的方法就在哪裡
 
+### 關於 github search App
+
+PubSub 套件 :
+可用於任意元件之間的通信，以該案例來說，原先需要透過父元件來進行交互，透過消息訂閱發布則可以直接將狀態放在 searchResult 的元件內，在 search 元件內 publish 消息，searchResult 即可接收資料並 setState 去 render
+
 ## Available Scripts
 
 In the project directory, you can run:

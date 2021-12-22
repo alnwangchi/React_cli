@@ -1,29 +1,19 @@
 import React, { Component } from 'react'
-import Pubsub from 'pubsub-js'
 
+/* 
+關於顯示的這個元件有好幾種狀況
+1. 剛進頁面未搜尋的顯示
+2. 發送搜尋請求結果未果的 loading 顯示
+3. 成功顯示
+4. 請求失敗顯示
+
+App父元件的 state 必須記錄
+*/
 export default class ResultField extends Component {
 
-  state = { // 初始值
-    users: [],
-    isFirst: true, // 是否為第一次進入畫面
-    isLoading: false, // 是否為等待數據中 
-    error: '' // 錯誤時的訊息
-  }
-
-  componentDidMount() {
-    console.log('請按讚訂閱加分享小鈴鐺');
-    this.token = Pubsub.subscribe("Hi",(_,stateObj) => {
-      console.log('收到消息囉',stateObj);
-      this.setState(stateObj)
-    })
-  }
-  
-  componentWillUnmount() {
-    Pubsub.unsubscribe(this.token)
-  }
-
+  // 特別注意 : React 不可以直接 render 一個物件，所以 error 是個物件必須取裡面所需的東西出來才可以
   render() {
-    const {users, isLoading, isFirst, error} = this.state;  
+    const {users, isLoading, isFirst, error} = this.props;  
     return (
       <div className="result_field">
         {

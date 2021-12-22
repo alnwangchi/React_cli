@@ -1,36 +1,28 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from 'axios' // AJAX
+import Pubsub from 'pubsub-js' // 訂閱發布
+
 
 export default class SearchField extends Component {
 
   searchUser = () => {
-    // 取得輸入內容 連續解構+重名
+    console.log('Search元件發布消息囉!');
+    // Pubsub.publish('Hi',{name: 'John', age: 33})
     const {keyWordElement:{value:keyWord}} = this
-    // 拿到往父層傳資料的方法 成功取得數據後調用
-    const {updateAppState} = this.props
-    // 改變成不為第一次進入畫面的狀態並在 loading 中
-    updateAppState({
+
+    Pubsub.publish('Hi',{
       isFirst: false,
       isLoading: true
-    })
-    // 發送 request 給 github
-    // 小註解 github 的後端已經解決的跨域問題所以可以得到 response
+    })  
+
     const url = `https://api.github.com/search/users?q=${keyWord}`
     axios.get(url)
       .then(response => {
-        // console.log("Success!", response.data)
         const usersData = response.data.items
-        updateAppState({
-          isLoading: false, // 拿到後就不為 loading 狀態
-          users: usersData
-        })
+        Pubsub.publish('Hi', {isLoading: false, users: usersData})
       })
       .catch(error => {
-        // console.log(error)
-        updateAppState({
-          isLoading: false, // 儘管失敗也不為 loading 狀態
-          error: error // 保存錯誤訊息 
-        })
+        Pubsub.publish('Hi', {isLoading: false, error: error})
       })
   }
   
