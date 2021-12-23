@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 5%;
+}
+
+.router_app {
+  width: 900px;
+  margin: 0 auto;
+
+  .content {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0;
+    nav {
+      flex: 1;
+      display: flex;
+      gap: .5rem;
+      flex-direction: column;
+      .link {
+        padding: .25em .5em;
+        border: 1px solid #ccc;
+        &.active {
+          background-color: lightblue;
+          color: #fff;
+        }
+      }
+    }
+
+    .show {
+      flex: 3;
+    }
+  }
+}
