@@ -38,7 +38,9 @@ body {
 
 .router_app .content nav .link {
   padding: .25em .5em;
+  color: #000;
   border: 1px solid #ccc;
+  text-decoration: none;
 }
 
 .router_app .content nav .link.active {

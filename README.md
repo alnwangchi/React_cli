@@ -49,7 +49,13 @@ PubSub 套件 :
 
 #### React Router
 
+路由元件與一般元件差異 :
+1. 寫法不同，一般 <Demo/>，路由 <Route path='/home' element={<Home/>} />
+2. 檔案位置不同，一般放 components，路由放 pages
+3. 接收的 props 不同，一般傳啥接啥，路由固定接收 match location history
 
+
+Link => NavLink 他會幫我自動的把被點擊到的對象添加 active class
 
 ## Available Scripts
 
